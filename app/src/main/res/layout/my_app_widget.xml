@@ -1,0 +1,83 @@
+<!--
+  ~ Copyright (c) 17-8-31 下午9:53 Author@KewenC
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/widget_margin"
+    android:background="@color/colorPrimary"
+    android:gravity="center">
+    <TextView
+        android:gravity="center"
+        android:id="@+id/tv_word_appwidget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:contentDescription="@string/appwidget_text"
+        android:text="@string/appwidget_text"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold|italic" />
+    <TextView
+        android:gravity="center"
+        android:id="@+id/tv_translates_appwidget"
+        android:layout_below="@+id/tv_word_appwidget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:contentDescription="@string/appwidget_text"
+        android:text="[example]\nn.例如"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"/>
+    <TextView
+
+        android:id="@+id/tv_num_appwidget"
+        android:textColor="#FFFFFF"
+        android:contentDescription="@string/appwidget_text"
+        android:layout_margin="8dp"
+        android:layout_below="@+id/tv_translates_appwidget"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="8sp"/>
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#2000"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/tv_previous_appwidget"
+            android:gravity="center"
+            android:padding="16dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:text="上一个"/>
+        <TextView
+            android:id="@+id/tv_collect_appwidget"
+            android:gravity="center"
+            android:padding="16dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:text="收藏"/>
+        <TextView
+            android:id="@+id/tv_next_appwidget"
+            android:gravity="center"
+            android:padding="16dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:text="下一个"/>
+    </LinearLayout>
+
+</RelativeLayout>
