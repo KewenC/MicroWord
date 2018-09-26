@@ -27,7 +27,7 @@ public class Constants {
     /**
      * 数据库
      */
-    public static final int DATABASE_VERSION = 1;//版本号
+    public static final int DATABASE_VERSION = 2;//版本号
 
     public static final String DATABASE_CET4_CACHE = "cet4.db";// 临时数据库
     public static final String DATABASE_CET6_CACHE = "cet6.db";

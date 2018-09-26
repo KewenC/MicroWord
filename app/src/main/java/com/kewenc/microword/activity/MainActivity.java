@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 case 0:
 //                    databaseHelper_native = new DatabaseHelper(getApplicationContext());
 //                    sqLiteDatabase_native =databaseHelper_native.getReadableDatabase();
+
                     new Thread(new Runnable() {
                         @Override
                         public void run() {

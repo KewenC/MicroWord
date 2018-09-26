@@ -34,6 +34,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("create table "+TABLE_ALL[2]+"(id INTEGER primary key,word CHAR(50),marken CHAR(50),markus CHAR(50),translate CHAR(200),markenpath CHAR(150),markuspath CHAR(150),collect BOOLEAN(10))");
         //雅思
         sqLiteDatabase.execSQL("create table "+TABLE_ALL[3]+"(id INTEGER primary key,word CHAR(50),marken CHAR(50),markus CHAR(50),translate CHAR(200),markenpath CHAR(150),markuspath CHAR(150),collect BOOLEAN(10))");
+
+
+
+        //四级
+        sqLiteDatabase.execSQL("create table "+"cet4"+"(id INTEGER primary key,word CHAR(50),marken CHAR(50),markus CHAR(50),translate CHAR(200),markenpath CHAR(150),markuspath CHAR(150),sort Integer,collect BOOLEAN(10))");
+        //六级
+        sqLiteDatabase.execSQL("create table "+"cet6"+"(id INTEGER primary key,word CHAR(50),marken CHAR(50),markus CHAR(50),translate CHAR(200),markenpath CHAR(150),markuspath CHAR(150),sort Integer,collect BOOLEAN(10))");
+        //考研
+        sqLiteDatabase.execSQL("create table "+"teefps"+"(id INTEGER primary key,word CHAR(50),marken CHAR(50),markus CHAR(50),translate CHAR(200),markenpath CHAR(150),markuspath CHAR(150),sort Integer,collect BOOLEAN(10))");
+        //雅思
+        sqLiteDatabase.execSQL("create table "+"ielts"+"(id INTEGER primary key,word CHAR(50),marken CHAR(50),markus CHAR(50),translate CHAR(200),markenpath CHAR(150),markuspath CHAR(150),sort Integer,collect BOOLEAN(10))");
+
+
+
         //收藏
         sqLiteDatabase.execSQL("create table "+TABLE_ALL[4]+"(id INTEGER primary key,word CHAR(50),marken CHAR(50),markus CHAR(50),translate CHAR(200),markenpath CHAR(150),markuspath CHAR(150),collect BOOLEAN(10),flag CHAR(50))");
         //乱序表
@@ -45,6 +59,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+        //四级
+        sqLiteDatabase.execSQL("create table "+"cet4"+"(id INTEGER primary key,word CHAR(50),marken CHAR(50),markus CHAR(50),translate CHAR(200),markenpath CHAR(150),markuspath CHAR(150),sort Integer,collect BOOLEAN(10))");
+        //六级
+        sqLiteDatabase.execSQL("create table "+"cet6"+"(id INTEGER primary key,word CHAR(50),marken CHAR(50),markus CHAR(50),translate CHAR(200),markenpath CHAR(150),markuspath CHAR(150),sort Integer,collect BOOLEAN(10))");
+        //考研
+        sqLiteDatabase.execSQL("create table "+"teefps"+"(id INTEGER primary key,word CHAR(50),marken CHAR(50),markus CHAR(50),translate CHAR(200),markenpath CHAR(150),markuspath CHAR(150),sort Integer,collect BOOLEAN(10))");
+        //雅思
+        sqLiteDatabase.execSQL("create table "+"ielts"+"(id INTEGER primary key,word CHAR(50),marken CHAR(50),markus CHAR(50),translate CHAR(200),markenpath CHAR(150),markuspath CHAR(150),sort Integer,collect BOOLEAN(10))");
     }
 }
