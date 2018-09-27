@@ -6,6 +6,7 @@ package com.kewenc.microword.activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -175,6 +176,7 @@ public class Cet4Activity extends AppCompatActivity {
                     ,new String[] {id},null,null,null);
                     cursor2.moveToFirst();
                     AddData(cursor2);
+//                    AddData2(cursor2,Integer.parseInt(id));
                     cursor2.close();
                     Message msg = new Message();
                     msg.arg1 = ++p;
@@ -190,6 +192,41 @@ public class Cet4Activity extends AppCompatActivity {
         return list;
     }
 
+    private void AddData2(Cursor cursor,int sort) {
+        String id = cursor.getString(cursor.getColumnIndex("id"));
+        String word = cursor.getString(cursor.getColumnIndex("word"));
+        String marken = cursor.getString(cursor.getColumnIndex("marken"));
+        String markus = cursor.getString(cursor.getColumnIndex("markus"));
+        String translate = cursor.getString(cursor.getColumnIndex("translate"));
+
+        DatabaseHelper helper = new DatabaseHelper(this);
+        SQLiteDatabase db = helper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("word",word);
+        values.put("marken",marken);
+        values.put("markus",markus);
+        values.put("translate",translate);
+        values.put("markenpath","");
+        values.put("markuspath","");
+        values.put("sort",sort);
+        values.put("collect",false);
+        switch (mFlag){
+            case 0:
+                db.insert("cet4","0",values);
+                break;
+            case 1:
+                db.insert("cet6","0",values);
+                break;
+            case 2:
+                db.insert("teefps","0",values);
+                break;
+            case 3:
+                db.insert("ielts","0",values);
+                break;
+        }
+
+        db.close();
+    }
     /**
      * 为list赋值
      * @param cursor
